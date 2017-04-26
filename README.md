@@ -13,17 +13,23 @@ It will create less file in less/blocks/blockName.less & pug file in pug/include
 
 Structure of files:
 ```bash
+img/                    # General images for optimisatons
+  icons-png/            # Icons in format png for create sprite.png
+  icons-svg/            # Icons in format svg for create sprite.svg
+  icons-svg-inline/     # Icons in format svg for create sprite-inline.svg (for html inline <svg><use href=""></use></svg>)
+  img-svg/              # Images in format svg for minification
+fonts/                  
+vendor/                 # Стилевой файл блока
+scripts/                # Custom scripts (minifiction)
+less/
+  blocks/
+  mixins/
+  variables.less
+  style.less            # Point of css creation
+pug/
+  mixins/
+  includes/
+  extends/
+  index.pug
 
-img/
-  icons-png/                      # Изображения, используемые блоком и обрабатываемые автоматикой сборки
-  icons-svg/                      # Изображения, используемые блоком и обрабатываемые автоматикой сборки
-  icons-svg-inline/                      # Изображения, используемые блоком и обрабатываемые автоматикой сборки
-  img-svg/                      # Изображения, используемые блоком и обрабатываемые автоматикой сборки
-some-folder/            # Какая-то сторонняя папка, не обрабатываемая автоматикой
-demo-block.scss         # Стилевой файл блока
-demo-block--mod.scss    # Отдельный стилевой файл БЭМ-модификатора блока
-demo-block.js           # js-файл блока
-demo-block--mod.js      # js-файл для отдельного БЭМ-модификатора блока
-demo-block.html         # Варианты разметки (как документация блока или как вставляемый микрошаблонизатором фрагмент)
-readme.md               # Какое-то пояснение
 ```
