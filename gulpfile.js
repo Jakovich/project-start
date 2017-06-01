@@ -18,7 +18,7 @@ var path = require('path');
 var imagemin = require("gulp-imagemin");
 var spritesmith = require("gulp.spritesmith");
 var pug = require('gulp-pug');
-
+var deploy = require('gulp-gh-pages');
 
 gulp.task('html', function buildHTML() {
     return gulp.src('pug/*.pug')
@@ -166,6 +166,16 @@ gulp.task("clean", function() {
         })
         .pipe(clean());
 });
+
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+  return gulp.src("build/**/*")
+    .pipe(deploy())
+});
+
 
 
 
